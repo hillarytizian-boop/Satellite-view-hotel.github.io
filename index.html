@@ -5,106 +5,139 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SATELITE VIEW HOTEL | Webuye</title>
 
+<!-- Fonts & Tailwind -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+
 <style>
 body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#f4f4f4;
+  margin:0;
+  font-family: 'Lato', sans-serif;
+  scroll-behavior: smooth;
+  background:#0f2e22;
+  color:#f8f5f2;
+  overflow-x:hidden;
 }
 header{
-    background:#111;
-    color:white;
-    padding:20px;
-    text-align:center;
+  position:relative;
+  height:80vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  overflow:hidden;
 }
-nav{
-    background:#222;
-    padding:10px;
-    text-align:center;
+.hero-bg{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-image:url('https://via.placeholder.com/1600x900');
+  background-size:cover;
+  background-position:center;
+  animation: float 20s infinite alternate;
+  opacity:0.9;
 }
-nav a{
-    color:white;
-    margin:10px;
-    text-decoration:none;
+.hero-overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(15,46,34,0.6);
 }
-section{
-    padding:40px 20px;
-}
-h2{
-    text-align:center;
-    margin-bottom:20px;
-}
-.service-box{
-    background:white;
-    padding:20px;
-    margin:10px auto;
-    max-width:800px;
-    border-radius:8px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
+.hero-text{
+  position:relative;
+  z-index:10;
+  max-width:800px;
 }
 button{
-    padding:10px 20px;
-    background:#007bff;
-    color:white;
-    border:none;
-    cursor:pointer;
-    border-radius:5px;
+  padding:12px 20px;
+  background:#c5a059;
+  color:#0f2e22;
+  border:none;
+  cursor:pointer;
+  border-radius:5px;
 }
 button:hover{
-    background:#0056b3;
+  box-shadow:0 0 25px rgba(197,160,89,0.6);
+  transform:translateY(-2px);
 }
-.gallery img{
-    width:100%;
-    max-width:300px;
-    margin:10px;
-    border-radius:8px;
+
+.service-box{
+  background:rgba(15,46,34,0.85);
+  padding:20px;
+  margin:20px auto;
+  max-width:800px;
+  border-radius:10px;
+  border:1px solid rgba(197,160,89,0.3);
 }
-footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:20px;
+ul li{
+  margin-bottom:5px;
 }
+
+/* Floating animation */
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-15px);}
+}
+
+/* Admin Panel */
 .admin-btn{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:red;
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:red;
+  color:white;
+  padding:10px;
+  border:none;
+  cursor:pointer;
 }
 #adminPanel{
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:white;
-    overflow:auto;
-    padding:30px;
+  display:none;
+  position:fixed;
+  top:0;left:0;width:100%;height:100%;
+  background:#0f2e22;
+  color:white;
+  overflow:auto;
+  padding:30px;
+}
+.gallery img{
+  width:100%;
+  max-width:300px;
+  margin:10px;
+  border-radius:10px;
+  animation: float 12s infinite alternate;
 }
 </style>
 </head>
-
 <body>
 
 <header>
-<h1>SATELITE VIEW HOTEL</h1>
-<p>Best Hotel in Webuye Kenya</p>
-<button onclick="bookNow()">Book Now</button>
-<a href="https://wa.me/254114717683" target="_blank">
-<button>WhatsApp Booking</button>
-</a>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-text">
+    <h1 class="text-5xl md:text-7xl font-serif mb-4">SATELITE VIEW HOTEL</h1>
+    <p class="text-xl md:text-2xl mb-6">Where Comfort Meets Elegance in Western Kenya</p>
+    <button onclick="bookNow()">Book Now</button>
+    <a href="https://wa.me/254114717683" target="_blank">
+      <button>WhatsApp Booking</button>
+    </a>
+  </div>
 </header>
 
-<nav>
-<a href="#services">Services</a>
-<a href="#meetings">Meetings</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
+<nav class="bg-hotel-dark p-4 text-center">
+  <a href="#services" class="mx-4 hover:text-hotel-gold">Services</a>
+  <a href="#meetings" class="mx-4 hover:text-hotel-gold">Meetings</a>
+  <a href="#gallery" class="mx-4 hover:text-hotel-gold">Gallery</a>
+  <a href="#contact" class="mx-4 hover:text-hotel-gold">Contact</a>
 </nav>
 
-<section id="services">
-<h2>Services Offered</h2>
+<section id="services" class="py-12 px-6">
+<h2 class="text-3xl text-hotel-gold font-serif text-center mb-6">Services Offered</h2>
 
 <div class="service-box">
 <h3>Swimming Pool</h3>
@@ -147,15 +180,12 @@ footer{
 
 <div class="service-box">
 <h3>Bakery</h3>
-<p>Scones</p>
-<p>Muffin</p>
-<p>Cakes</p>
+<p>Scones, Muffin, Cakes</p>
 </div>
-
 </section>
 
-<section id="meetings">
-<h2>Meetings & Conference Hall</h2>
+<section id="meetings" class="py-12 px-6">
+<h2 class="text-3xl text-hotel-gold font-serif text-center mb-6">Meetings & Conference Hall</h2>
 
 <div class="service-box">
 <p>Spacious hall suitable for meetings, seminars, workshops, church gatherings and corporate events.</p>
@@ -171,32 +201,30 @@ footer{
 </div>
 </section>
 
-<section id="gallery">
-<h2>Gallery</h2>
-<div class="gallery">
+<section id="gallery" class="py-12 px-6">
+<h2 class="text-3xl text-hotel-gold font-serif text-center mb-6">Gallery</h2>
+<div class="gallery flex flex-wrap justify-center">
 <img id="img1" src="https://via.placeholder.com/300">
 <img id="img2" src="https://via.placeholder.com/300">
 <img id="img3" src="https://via.placeholder.com/300">
 </div>
 </section>
 
-<section id="contact">
-<h2>Contact Us</h2>
+<section id="contact" class="py-12 px-6">
+<h2 class="text-3xl text-hotel-gold font-serif text-center mb-6">Contact Us</h2>
 <p>Email: sateliteviewhotel205@gmail.com</p>
-<p>Tel: +254 796 113 703</p>
-<p>0729 451 714</p>
-<p>0725 857 867</p>
+<p>Tel: +254 796 113 703 / 0729 451 714 / 0725 857 867</p>
 <p>P.O. Box 752 - 50205, Webuye</p>
 
 <form onsubmit="sendForm(event)">
-<input type="text" placeholder="Your Name" required><br><br>
-<input type="email" placeholder="Your Email" required><br><br>
-<textarea placeholder="Inquiry | Comment | Complain" required></textarea><br><br>
+<input type="text" placeholder="Your Name" required class="w-full mb-4 p-2"><br>
+<input type="email" placeholder="Your Email" required class="w-full mb-4 p-2"><br>
+<textarea placeholder="Inquiry | Comment | Complain" required class="w-full mb-4 p-2"></textarea><br>
 <button type="submit">Send</button>
 </form>
 </section>
 
-<footer>
+<footer class="bg-hotel-dark py-6 text-center">
 <p>© 2026 SATELITE VIEW HOTEL | Webuye</p>
 </footer>
 
@@ -213,9 +241,7 @@ footer{
 </div>
 
 <script>
-function bookNow(){
-    alert("Booking request sent! Call 0114717683 to confirm.");
-}
+function bookNow(){alert("Booking request sent! Call 0114717683 to confirm.");}
 
 function sendForm(e){
     e.preventDefault();
@@ -224,9 +250,9 @@ function sendForm(e){
 
 function adminLogin(){
     let pass = prompt("Enter Admin Password");
-    if(pass === "TZian"){
+    if(pass==="TZian"){
         document.getElementById("adminPanel").style.display="block";
-    }else{
+    } else {
         alert("Wrong Password");
     }
 }
@@ -237,18 +263,18 @@ function closeAdmin(){
 
 function changeImage(event,id){
     const reader = new FileReader();
-    reader.onload = function(){
-        localStorage.setItem(id, reader.result);
-        document.getElementById(id).src = reader.result;
+    reader.onload=function(){
+        localStorage.setItem(id,reader.result);
+        document.getElementById(id).src=reader.result;
     }
     reader.readAsDataURL(event.target.files[0]);
 }
 
-window.onload = function(){
+window.onload=function(){
     ["img1","img2","img3"].forEach(id=>{
-        let saved = localStorage.getItem(id);
+        let saved=localStorage.getItem(id);
         if(saved){
-            document.getElementById(id).src = saved;
+            document.getElementById(id).src=saved;
         }
     });
 }
