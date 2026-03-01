@@ -35,7 +35,7 @@ header{
   left:0;
   width:100%;
   height:100%;
-  background-image:url('https://via.placeholder.com/1600x900');
+  background-image:url('https://image.qwenlm.ai/public_source/85afffed-584e-4bc7-af09-f59ebf912cb8/1da6dbe75-873f-4d70-bf81-c3b1a2347849.png');
   background-size:cover;
   background-position:center;
   animation: float 20s infinite alternate;
@@ -61,6 +61,7 @@ button{
   border:none;
   cursor:pointer;
   border-radius:5px;
+  margin:5px;
 }
 button:hover{
   box-shadow:0 0 25px rgba(197,160,89,0.6);
@@ -95,6 +96,7 @@ ul li{
   padding:10px;
   border:none;
   cursor:pointer;
+  z-index:999;
 }
 #adminPanel{
   display:none;
@@ -104,6 +106,7 @@ ul li{
   color:white;
   overflow:auto;
   padding:30px;
+  z-index:1000;
 }
 .gallery img{
   width:100%;
@@ -122,10 +125,12 @@ ul li{
   <div class="hero-text">
     <h1 class="text-5xl md:text-7xl font-serif mb-4">SATELITE VIEW HOTEL</h1>
     <p class="text-xl md:text-2xl mb-6">Where Comfort Meets Elegance in Western Kenya</p>
-    <button onclick="bookNow()">Book Now</button>
-    <a href="https://wa.me/254114717683" target="_blank">
-      <button>WhatsApp Booking</button>
-    </a>
+    <div>
+      <button onclick="bookNow()">Book Now</button>
+      <a href="https://wa.me/254114717683" target="_blank">
+        <button>WhatsApp Booking</button>
+      </a>
+    </div>
   </div>
 </header>
 
