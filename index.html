@@ -24,8 +24,6 @@ header div{
     padding:30px;
     border-radius:10px;
 }
-header h1{font-size:3rem;margin-bottom:10px;}
-header p{font-size:1.2rem;margin-bottom:20px;}
 
 nav{
     background:#0d3b66;
@@ -43,14 +41,8 @@ nav a{
 }
 nav a:hover{color:#ffd60a;}
 
-.section{
-    padding:70px 20px;
-    text-align:center;
-}
-.section h2{
-    margin-bottom:30px;
-    color:#0d3b66;
-}
+.section{padding:70px 20px;text-align:center;}
+.section h2{margin-bottom:30px;color:#0d3b66;}
 
 .services{
     display:grid;
@@ -66,127 +58,45 @@ nav a:hover{color:#ffd60a;}
     border-radius:10px;
     box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
-.card h3{margin-bottom:15px;color:#1d3557;}
 
-.bg-pool{
-    background:url('https://images.unsplash.com/photo-1501117716987-c8e1ecb210f0') center/cover no-repeat;
-    color:white;
-}
-.bg-spa{
-    background:url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874') center/cover no-repeat;
-    color:white;
-}
-.bg-bakery{
-    background:url('https://images.unsplash.com/photo-1509440159596-0249088772ff') center/cover no-repeat;
-    color:white;
-}
+.bg-pool{background:url('https://images.unsplash.com/photo-1501117716987-c8e1ecb210f0') center/cover no-repeat;color:white;}
+.bg-spa{background:url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874') center/cover no-repeat;color:white;}
+.bg-bakery{background:url('https://images.unsplash.com/photo-1509440159596-0249088772ff') center/cover no-repeat;color:white;}
+.overlay{background:rgba(0,0,0,0.6);padding:70px 20px;}
 
-.overlay{
-    background:rgba(0,0,0,0.6);
-    padding:70px 20px;
-}
-
-.contact{
-    background:#1d3557;
-    color:white;
-    padding:50px 20px;
-}
-.contact input, .contact textarea{
-    width:100%;
-    max-width:500px;
-    padding:10px;
-    margin:10px 0;
-    border:none;
-    border-radius:5px;
+.contact{background:#1d3557;color:white;padding:50px 20px;}
+.contact input,.contact textarea{
+    width:100%;max-width:500px;padding:10px;margin:10px 0;border:none;border-radius:5px;
 }
 .contact button{
-    padding:12px 25px;
-    background:#ffd60a;
-    border:none;
-    border-radius:5px;
-    font-weight:bold;
-    cursor:pointer;
+    padding:12px 25px;background:#ffd60a;border:none;border-radius:5px;font-weight:bold;cursor:pointer;
 }
-.contact button:hover{background:#ffb703;}
 
-footer{
-    background:#0d3b66;
-    color:white;
-    text-align:center;
-    padding:15px;
-}
+footer{background:#0d3b66;color:white;text-align:center;padding:15px;}
 
 .whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    padding:15px;
-    border-radius:50%;
-    text-decoration:none;
-    font-size:20px;
-    z-index:1000;
+    position:fixed;bottom:20px;right:20px;background:#25D366;color:white;
+    padding:15px;border-radius:50%;text-decoration:none;font-size:20px;z-index:1000;
 }
 
 .admin-btn{
-    position:fixed;
-    bottom:80px;
-    right:20px;
-    background:#0d3b66;
-    color:white;
-    padding:12px 18px;
-    border-radius:5px;
-    cursor:pointer;
-    z-index:1000;
+    position:fixed;bottom:80px;right:20px;background:#0d3b66;color:white;
+    padding:12px;border-radius:5px;cursor:pointer;z-index:1000;
 }
-.admin-btn:hover{background:#1d3557;}
 
-.admin-dashboard{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.85);
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:2000;
+/* Dashboard */
+.dashboard{
+    position:fixed;top:0;left:0;width:100%;height:100%;
+    background:rgba(0,0,0,0.9);
+    display:none;justify-content:center;align-items:center;z-index:2000;
 }
 .dashboard-content{
-    background:white;
-    padding:30px;
-    border-radius:10px;
-    width:90%;
-    max-width:600px;
-    text-align:left;
+    background:white;padding:30px;border-radius:10px;width:90%;max-width:500px;
 }
-.dashboard-content h2{
-    color:#0d3b66;
-    margin-bottom:20px;
-}
-.dashboard-content label{
-    display:block;
-    margin-top:15px;
-    font-weight:bold;
-}
-.dashboard-content input{
-    width:100%;
-    padding:8px;
-    margin-top:5px;
-    border-radius:5px;
-    border:1px solid #ccc;
-}
+.dashboard-content input{width:100%;margin:10px 0;}
 .dashboard-content button{
-    margin-top:20px;
-    padding:10px 20px;
-    background:#ffd60a;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
+    padding:10px 20px;background:#ffd60a;border:none;border-radius:5px;cursor:pointer;
 }
-.dashboard-content button:hover{background:#ffb703;}
 </style>
 </head>
 
@@ -196,7 +106,6 @@ footer{
 <div>
 <h1>SATELITE VIEW HOTEL</h1>
 <p>Premier Hospitality Destination in Webuye, Western Kenya</p>
-<a href="#contact" style="background:#ffd60a;padding:12px 25px;border-radius:5px;color:black;text-decoration:none;font-weight:bold;">Book Now</a>
 </div>
 </header>
 
@@ -211,19 +120,9 @@ footer{
 <div class="overlay">
 <h2>Swimming & Recreation</h2>
 <div class="services">
-<div class="card">
-<h3>Swimming Pool</h3>
-<p>Adult – 200/=</p>
-<p>Child – 150/=</p>
-</div>
-<div class="card">
-<h3>Swimming Lessons</h3>
-<p>Available (Contact for details)</p>
-</div>
-<div class="card">
-<h3>Sauna</h3>
-<p>500/=</p>
-</div>
+<div class="card"><h3>Swimming Pool</h3><p>Adult – 200/=</p><p>Child – 150/=</p></div>
+<div class="card"><h3>Swimming Lessons</h3></div>
+<div class="card"><h3>Sauna</h3><p>500/=</p></div>
 </div>
 </div>
 </section>
@@ -232,28 +131,11 @@ footer{
 <div class="overlay">
 <h2>Spa & Beauty Services</h2>
 <div class="services">
-<div class="card">
-<h3>Massage</h3>
-<p>1500/=</p>
-</div>
-<div class="card">
-<h3>Facial Scrub</h3>
-<p>250/=</p>
-</div>
-<div class="card">
-<h3>Body Scrub</h3>
-<p>1500/=</p>
-</div>
-<div class="card">
-<h3>Hair Dressing - Kinyozi</h3>
-<p>Adult – 200/=</p>
-<p>Child – 100/=</p>
-<p>Ndevu – 50/=</p>
-</div>
-<div class="card">
-<h3>Beauty Therapy</h3>
-<p>Available</p>
-</div>
+<div class="card"><h3>Massage</h3><p>1500/=</p></div>
+<div class="card"><h3>Facial Scrub</h3><p>250/=</p></div>
+<div class="card"><h3>Body Scrub</h3><p>1500/=</p></div>
+<div class="card"><h3>Hair Dressing - Kinyozi</h3><p>Adult – 200/=</p><p>Child – 100/=</p><p>Ndevu – 50/=</p></div>
+<div class="card"><h3>Beauty Therapy</h3></div>
 </div>
 </div>
 </section>
@@ -262,12 +144,7 @@ footer{
 <div class="overlay">
 <h2>Bakery</h2>
 <div class="services">
-<div class="card">
-<h3>Fresh Daily</h3>
-<p>Scones</p>
-<p>Muffins</p>
-<p>Cakes</p>
-</div>
+<div class="card"><h3>Fresh Daily</h3><p>Scones</p><p>Muffins</p><p>Cakes</p></div>
 </div>
 </div>
 </section>
@@ -277,32 +154,69 @@ footer{
 <p>Email: sateliteviewhotel205@gmail.com</p>
 <p>Tel: +254 796 113 703 | 0729 451 714 | 0725 857 867</p>
 <p>P.O. Box 752 – 50205, Webuye</p>
-
-<form action="mailto:sateliteviewhotel205@gmail.com" method="post" enctype="text/plain">
-<input type="text" name="Name" placeholder="Your Name" required>
-<input type="email" name="Email" placeholder="Your Email" required>
-<textarea name="Message" rows="4" placeholder="Your Message"></textarea>
-<br>
-<button type="submit">Send Message</button>
-</form>
 </section>
 
-<footer>
-© 2026 Satelite View Hotel | Best Hotel in Webuye Kenya
-</footer>
+<footer>© 2026 Satelite View Hotel</footer>
 
 <a class="whatsapp" href="https://wa.me/254114717683" target="_blank">💬</a>
-<button class="admin-btn" onclick="showAdminLogin()">Admin Dashboard</button>
+<button class="admin-btn" onclick="openDashboard()">Admin</button>
+
+<div class="dashboard" id="dashboard">
+<div class="dashboard-content">
+<h3>Admin Login</h3>
+<input type="password" id="adminPass" placeholder="Enter Password">
+<button onclick="login()">Login</button>
+<div id="adminPanel" style="display:none;">
+<h3>Upload Images</h3>
+<label>Hero Image</label>
+<input type="file" onchange="uploadImage(event,'hero')">
+<label>Pool Section</label>
+<input type="file" onchange="uploadImage(event,'pool')">
+<label>Spa Section</label>
+<input type="file" onchange="uploadImage(event,'spa')">
+<label>Bakery Section</label>
+<input type="file" onchange="uploadImage(event,'bakery')">
+<button onclick="closeDashboard()">Close</button>
+</div>
+</div>
+</div>
 
 <script>
-function showAdminLogin(){
-    var pwd = prompt("Enter Admin Password:");
-    if(pwd === "TZian"){
-        alert("Admin Access Granted");
-    } else if(pwd !== null){
-        alert("Incorrect Password");
-    }
+function openDashboard(){document.getElementById("dashboard").style.display="flex";}
+function closeDashboard(){document.getElementById("dashboard").style.display="none";}
+
+function login(){
+    if(document.getElementById("adminPass").value==="TZian"){
+        document.getElementById("adminPanel").style.display="block";
+    }else{alert("Wrong Password");}
 }
+
+function uploadImage(event,section){
+    const reader=new FileReader();
+    reader.onload=function(){
+        const imageData=reader.result;
+        localStorage.setItem(section,imageData);
+        if(section==="hero"){
+            document.getElementById("hero").style.backgroundImage=`url('${imageData}')`;
+        }else{
+            document.getElementById(section).style.backgroundImage=`url('${imageData}')`;
+        }
+    };
+    reader.readAsDataURL(event.target.files[0]);
+}
+
+window.onload=function(){
+    ["hero","pool","spa","bakery"].forEach(section=>{
+        const saved=localStorage.getItem(section);
+        if(saved){
+            if(section==="hero"){
+                document.getElementById("hero").style.backgroundImage=`url('${saved}')`;
+            }else{
+                document.getElementById(section).style.backgroundImage=`url('${saved}')`;
+            }
+        }
+    });
+};
 </script>
 
 </body>
