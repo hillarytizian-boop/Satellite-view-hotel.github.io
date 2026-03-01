@@ -126,13 +126,73 @@ footer{
     border-radius:50%;
     text-decoration:none;
     font-size:20px;
+    z-index:1000;
 }
+
+.admin-btn{
+    position:fixed;
+    bottom:80px;
+    right:20px;
+    background:#0d3b66;
+    color:white;
+    padding:12px 18px;
+    border-radius:5px;
+    cursor:pointer;
+    z-index:1000;
+}
+.admin-btn:hover{background:#1d3557;}
+
+.admin-dashboard{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.85);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+}
+.dashboard-content{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    width:90%;
+    max-width:600px;
+    text-align:left;
+}
+.dashboard-content h2{
+    color:#0d3b66;
+    margin-bottom:20px;
+}
+.dashboard-content label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+.dashboard-content input{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+.dashboard-content button{
+    margin-top:20px;
+    padding:10px 20px;
+    background:#ffd60a;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+.dashboard-content button:hover{background:#ffb703;}
 </style>
 </head>
 
 <body>
 
-<header>
+<header id="hero">
 <div>
 <h1>SATELITE VIEW HOTEL</h1>
 <p>Premier Hospitality Destination in Webuye, Western Kenya</p>
@@ -232,6 +292,58 @@ footer{
 </footer>
 
 <a class="whatsapp" href="https://wa.me/254796113703" target="_blank">💬</a>
+<button class="admin-btn" onclick="showAdminLogin()">Admin Dashboard</button>
+
+<!-- Admin Dashboard Modal -->
+<div class="admin-dashboard" id="adminDashboard">
+<div class="dashboard-content" id="dashboardContent">
+<h2>Admin Login</h2>
+<label>Password:</label>
+<input type="password" id="adminPassword" placeholder="Enter Password">
+<button onclick="loginAdmin()">Login</button>
+</div>
+</div>
+
+<script>
+// Admin Login Function
+function showAdminLogin(){
+    document.getElementById('adminDashboard').style.display='flex';
+}
+
+function loginAdmin(){
+    var pwd = document.getElementById('adminPassword').value;
+    if(pwd === 'TZian'){
+        // Change dashboard content to edit images
+        document.getElementById('dashboardContent').innerHTML = `
+        <h2>Admin Dashboard</h2>
+        <label>Hero Image URL:</label>
+        <input type="text" id="heroImg" value="${document.getElementById('hero').style.backgroundImage.replace(/url\(|\)|"/g,'')}">
+        <label>Pool Section Image URL:</label>
+        <input type="text" id="poolImg" value="${document.querySelector('#pool').style.backgroundImage.replace(/url\(|\)|"/g,'')}">
+        <label>Spa Section Image URL:</label>
+        <input type="text" id="spaImg" value="${document.querySelector('#spa').style.backgroundImage.replace(/url\(|\)|"/g,'')}">
+        <label>Bakery Section Image URL:</label>
+        <input type="text" id="bakeryImg" value="${document.querySelector('#bakery').style.backgroundImage.replace(/url\(|\)|"/g,'')}">
+        <button onclick="updateImages()">Update Images</button>
+        <button onclick="closeDashboard()">Close</button>
+        `;
+    } else {
+        alert('Incorrect Password');
+    }
+}
+
+function updateImages(){
+    document.getElementById('hero').style.backgroundImage = `url('${document.getElementById('heroImg').value}')`;
+    document.querySelector('#pool').style.backgroundImage = `url('${document.getElementById('poolImg').value}')`;
+    document.querySelector('#spa').style.backgroundImage = `url('${document.getElementById('spaImg').value}')`;
+    document.querySelector('#bakery').style.backgroundImage = `url('${document.getElementById('bakeryImg').value}')`;
+    alert('Images Updated Successfully!');
+}
+
+function closeDashboard(){
+    document.getElementById('adminDashboard').style.display='none';
+}
+</script>
 
 </body>
 </html>
