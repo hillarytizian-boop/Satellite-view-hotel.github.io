@@ -1,289 +1,605 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SATELITE VIEW HOTEL | Webuye</title>
-
-<!-- Fonts & Tailwind -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-
-<style>
-body{
-  margin:0;
-  font-family: 'Lato', sans-serif;
-  scroll-behavior: smooth;
-  background:#0f2e22;
-  color:#f8f5f2;
-  overflow-x:hidden;
-}
-header{
-  position:relative;
-  height:80vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  overflow:hidden;
-}
-.hero-bg{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background-image:url('https://image.qwenlm.ai/public_source/85afffed-584e-4bc7-af09-f59ebf912cb8/1da6dbe75-873f-4d70-bf81-c3b1a2347849.png');
-  background-size:cover;
-  background-position:center;
-  animation: float 20s infinite alternate;
-  opacity:0.9;
-}
-.hero-overlay{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(15,46,34,0.6);
-}
-.hero-text{
-  position:relative;
-  z-index:10;
-  max-width:800px;
-}
-button{
-  padding:12px 20px;
-  background:#c5a059;
-  color:#0f2e22;
-  border:none;
-  cursor:pointer;
-  border-radius:5px;
-  margin:5px;
-}
-button:hover{
-  box-shadow:0 0 25px rgba(197,160,89,0.6);
-  transform:translateY(-2px);
-}
-
-.service-box{
-  background:rgba(15,46,34,0.85);
-  padding:20px;
-  margin:20px auto;
-  max-width:800px;
-  border-radius:10px;
-  border:1px solid rgba(197,160,89,0.3);
-}
-ul li{
-  margin-bottom:5px;
-}
-
-/* Floating animation */
-@keyframes float{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-15px);}
-}
-
-/* Admin Panel */
-.admin-btn{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:red;
-  color:white;
-  padding:10px;
-  border:none;
-  cursor:pointer;
-  z-index:999;
-}
-#adminPanel{
-  display:none;
-  position:fixed;
-  top:0;left:0;width:100%;height:100%;
-  background:#0f2e22;
-  color:white;
-  overflow:auto;
-  padding:30px;
-  z-index:1000;
-}
-.gallery img{
-  width:100%;
-  max-width:300px;
-  margin:10px;
-  border-radius:10px;
-  animation: float 12s infinite alternate;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIZIAN PHONK · full processor</title>
+    <!-- LameJS for MP3 encoding -->
+    <script src="https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.min.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            user-select: none;
+        }
+        body {
+            background: radial-gradient(circle at 10% 20%, #0a0c15, #010101);
+            font-family: 'Segoe UI', 'Inter', system-ui, monospace;
+            margin: 0;
+            padding: 2rem 1rem;
+            color: #f0f0f0;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f7b05e, #e03a1a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+        .tag {
+            border-left: 4px solid #f57c2e;
+            padding-left: 1rem;
+            color: #bfc9f0;
+            margin: 0.5rem 0 2rem 0;
+        }
+        .flex-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .card {
+            background: rgba(12, 16, 28, 0.85);
+            backdrop-filter: blur(14px);
+            border-radius: 2rem;
+            padding: 1.5rem;
+            border: 1px solid rgba(245, 124, 46, 0.4);
+            flex: 1;
+            min-width: 260px;
+            transition: 0.2s;
+            box-shadow: 0 15px 30px -12px black;
+        }
+        .card h3 {
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: #ffbc6e;
+        }
+        .slider-group {
+            margin-bottom: 1.2rem;
+        }
+        .slider-group label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            opacity: 0.9;
+        }
+        input[type="range"] {
+            width: 100%;
+            background: #252a3b;
+            height: 4px;
+            border-radius: 5px;
+            -webkit-appearance: none;
+        }
+        input[type="range"]:focus {
+            outline: none;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #f57c2e;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 8px #ff9f4a;
+        }
+        .upload-zone {
+            background: #0a0e18;
+            border: 2px dashed #f57c2e80;
+            border-radius: 1.8rem;
+            padding: 1.4rem;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .upload-zone:hover {
+            border-color: #f57c2e;
+            background: #12172a;
+        }
+        .file-name {
+            font-size: 0.8rem;
+            color: #b9c3ff;
+            margin-top: 8px;
+            word-break: break-all;
+        }
+        button {
+            background: #1f253c;
+            border: none;
+            padding: 0.7rem 1.2rem;
+            border-radius: 2rem;
+            font-weight: bold;
+            font-family: inherit;
+            color: white;
+            cursor: pointer;
+            transition: 0.1s linear;
+            margin-top: 0.5rem;
+        }
+        .btn-primary {
+            background: linear-gradient(95deg, #b13e1f, #e07c2c);
+            box-shadow: 0 0 12px #e06c2c60;
+        }
+        .btn-primary:active {
+            transform: scale(0.97);
+        }
+        .status {
+            background: #070b12;
+            border-radius: 1.2rem;
+            padding: 0.7rem 1rem;
+            font-family: monospace;
+            font-size: 0.8rem;
+            margin-top: 1.2rem;
+            border-left: 3px solid #f57c2e;
+        }
+        audio {
+            width: 100%;
+            margin-top: 1rem;
+            border-radius: 40px;
+        }
+        hr {
+            border-color: #2a3045;
+            margin: 1rem 0;
+        }
+        .badge {
+            font-size: 0.7rem;
+            background: #00000050;
+            border-radius: 30px;
+            padding: 0.2rem 0.8rem;
+            display: inline-block;
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.7rem;
+            color: #6e7aa3;
+        }
+        button:disabled {
+            opacity: 0.5;
+            transform: none;
+            cursor: not-allowed;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+    <h1>⚡ TIZIAN PHONK</h1>
+    <div class="tag">distortion · 808 bass · cowbell · pitch shift · mp3 export</div>
 
-<header>
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-text">
-    <h1 class="text-5xl md:text-7xl font-serif mb-4">SATELITE VIEW HOTEL</h1>
-    <p class="text-xl md:text-2xl mb-6">Where Comfort Meets Elegance in Western Kenya</p>
-    <div>
-      <button onclick="bookNow()">Book Now</button>
-      <a href="https://wa.me/254114717683" target="_blank">
-        <button>WhatsApp Booking</button>
-      </a>
+    <div class="flex-grid">
+        <!-- left: upload + controls -->
+        <div class="card">
+            <h3>📂 1. UPLOAD</h3>
+            <div class="upload-zone" id="uploadZone">
+                🎵 click or drag audio (MP3 / WAV)
+                <input type="file" id="audioFile" accept="audio/*" style="display:none">
+                <div class="file-name" id="fileName">no file selected</div>
+            </div>
+            <div style="display: flex; gap: 10px; margin-top: 1rem;">
+                <button id="playOriginalBtn">▶ play original</button>
+                <button id="phonkProcessBtn" class="btn-primary">🔥 PHONKIFY & DOWNLOAD MP3</button>
+            </div>
+            <div class="status" id="statusMsg">✅ ready — upload a track, adjust sliders, then phonkify</div>
+            <audio id="previewPlayer" controls style="display:none"></audio>
+        </div>
+
+        <!-- middle: phonk FX sliders -->
+        <div class="card">
+            <h3>🎛️ PHONK ENGINE</h3>
+            <div class="slider-group"><label>🔥 DISTORTION <span id="distVal">58</span></label><input type="range" id="distortionKnob" min="0" max="100" value="58" step="1"></div>
+            <div class="slider-group"><label>🎸 BASS BOOST (dB) <span id="bassVal">14</span></label><input type="range" id="bassKnob" min="0" max="24" value="14" step="1"></div>
+            <div class="slider-group"><label>🎚️ LOWPASS (Hz) <span id="lpVal">4800</span></label><input type="range" id="lowpassKnob" min="1500" max="12000" value="4800" step="50"></div>
+            <div class="slider-group"><label>🗜️ COMPRESSION (ratio) <span id="compVal">8</span></label><input type="range" id="compKnob" min="1" max="20" value="8" step="0.5"></div>
+            <div class="slider-group"><label>🐮 COWBELL VOL <span id="cowVolVal">0.65</span></label><input type="range" id="cowbellVol" min="0" max="1.2" value="0.65" step="0.01"></div>
+            <div class="slider-group"><label>🎵 PITCH SHIFT (semitones) <span id="pitchVal">0</span></label><input type="range" id="pitchShift" min="-5" max="5" value="0" step="0.5"></div>
+        </div>
+
+        <div class="card">
+            <h3>🐮 COWBELL & INFO</h3>
+            <div id="bpmDisplay" class="badge" style="background:#1e2a2f;">BPM: —</div>
+            <div id="cowbellNote" style="font-size:0.75rem; margin-top: 8px;">⚙️ auto BPM detection → adds cowbell pattern</div>
+            <hr>
+            <div><span class="badge">🎧 offline processing</span> <span class="badge">📥 MP3 / WAV</span></div>
+            <div style="margin-top: 12px;"><small>✔️ pitch shift via resampling + timestretch (works on whole mix)<br>✔️ cowbell uses detected tempo + simple melodic pattern</small></div>
+        </div>
     </div>
-  </div>
-</header>
-
-<nav class="bg-hotel-dark p-4 text-center">
-  <a href="#services" class="mx-4 hover:text-hotel-gold">Services</a>
-  <a href="#meetings" class="mx-4 hover:text-hotel-gold">Meetings</a>
-  <a href="#gallery" class="mx-4 hover:text-hotel-gold">Gallery</a>
-  <a href="#contact" class="mx-4 hover:text-hotel-gold">Contact</a>
-</nav>
-
-<section id="services" class="py-12 px-6">
-<h2 class="text-3xl text-hotel-gold font-serif text-center mb-6">Services Offered</h2>
-
-<div class="service-box">
-<h3>Swimming Pool</h3>
-<p>Adult - 200/=</p>
-<p>Child - 150/=</p>
-</div>
-
-<div class="service-box">
-<h3>Swimming Lessons</h3>
-<p>Contact us for details</p>
-</div>
-
-<div class="service-box">
-<h3>Sauna - 500/=</h3>
-</div>
-
-<div class="service-box">
-<h3>Massage - 1500/=</h3>
-</div>
-
-<div class="service-box">
-<h3>Hair Dressing - Kinyozi</h3>
-<p>Adult - 200/=</p>
-<p>Child - 100/=</p>
-<p>Ndevu - 50/=</p>
-</div>
-
-<div class="service-box">
-<h3>Facial Scrub - 250/=</h3>
-</div>
-
-<div class="service-box">
-<h3>Body Scrub - 1500/=</h3>
-</div>
-
-<div class="service-box">
-<h3>Beauty Therapy</h3>
-<p>Professional beauty care services available</p>
-</div>
-
-<div class="service-box">
-<h3>Bakery</h3>
-<p>Scones, Muffin, Cakes</p>
-</div>
-</section>
-
-<section id="meetings" class="py-12 px-6">
-<h2 class="text-3xl text-hotel-gold font-serif text-center mb-6">Meetings & Conference Hall</h2>
-
-<div class="service-box">
-<p>Spacious hall suitable for meetings, seminars, workshops, church gatherings and corporate events.</p>
-<ul>
-<li>Comfortable Seating</li>
-<li>Projector & Screen</li>
-<li>PA System</li>
-<li>Free WiFi</li>
-<li>Catering Available</li>
-<li>Ample Parking</li>
-</ul>
-<p>Contact us for pricing and booking.</p>
-</div>
-</section>
-
-<section id="gallery" class="py-12 px-6">
-<h2 class="text-3xl text-hotel-gold font-serif text-center mb-6">Gallery</h2>
-<div class="gallery flex flex-wrap justify-center">
-<img id="img1" src="https://via.placeholder.com/300">
-<img id="img2" src="https://via.placeholder.com/300">
-<img id="img3" src="https://via.placeholder.com/300">
-</div>
-</section>
-
-<section id="contact" class="py-12 px-6">
-<h2 class="text-3xl text-hotel-gold font-serif text-center mb-6">Contact Us</h2>
-<p>Email: sateliteviewhotel205@gmail.com</p>
-<p>Tel: +254 796 113 703 / 0729 451 714 / 0725 857 867</p>
-<p>P.O. Box 752 - 50205, Webuye</p>
-
-<form onsubmit="sendForm(event)">
-<input type="text" placeholder="Your Name" required class="w-full mb-4 p-2"><br>
-<input type="email" placeholder="Your Email" required class="w-full mb-4 p-2"><br>
-<textarea placeholder="Inquiry | Comment | Complain" required class="w-full mb-4 p-2"></textarea><br>
-<button type="submit">Send</button>
-</form>
-</section>
-
-<footer class="bg-hotel-dark py-6 text-center">
-<p>© 2026 SATELITE VIEW HOTEL | Webuye</p>
-</footer>
-
-<button class="admin-btn" onclick="adminLogin()">Admin</button>
-
-<div id="adminPanel">
-<h2>Admin Dashboard</h2>
-<button onclick="closeAdmin()">Close</button>
-<br><br>
-<h3>Change Gallery Images</h3>
-<input type="file" onchange="changeImage(event,'img1')"><br><br>
-<input type="file" onchange="changeImage(event,'img2')"><br><br>
-<input type="file" onchange="changeImage(event,'img3')"><br><br>
+    <footer>TIZIAN PHONK · all processing in browser · real phonk chain</footer>
 </div>
 
 <script>
-function bookNow(){alert("Booking request sent! Call 0114717683 to confirm.");}
-
-function sendForm(e){
-    e.preventDefault();
-    alert("Message sent successfully!");
-}
-
-function adminLogin(){
-    let pass = prompt("Enter Admin Password");
-    if(pass==="TZian"){
-        document.getElementById("adminPanel").style.display="block";
-    } else {
-        alert("Wrong Password");
-    }
-}
-
-function closeAdmin(){
-    document.getElementById("adminPanel").style.display="none";
-}
-
-function changeImage(event,id){
-    const reader = new FileReader();
-    reader.onload=function(){
-        localStorage.setItem(id,reader.result);
-        document.getElementById(id).src=reader.result;
-    }
-    reader.readAsDataURL(event.target.files[0]);
-}
-
-window.onload=function(){
-    ["img1","img2","img3"].forEach(id=>{
-        let saved=localStorage.getItem(id);
-        if(saved){
-            document.getElementById(id).src=saved;
+    (function(){
+        // DOM elements
+        const fileInput = document.getElementById('audioFile');
+        const fileNameSpan = document.getElementById('fileName');
+        const uploadZone = document.getElementById('uploadZone');
+        const playOriginalBtn = document.getElementById('playOriginalBtn');
+        const processBtn = document.getElementById('phonkProcessBtn');
+        const statusDiv = document.getElementById('statusMsg');
+        const bpmSpan = document.getElementById('bpmDisplay');
+        
+        // sliders
+        const distSlider = document.getElementById('distortionKnob');
+        const bassSlider = document.getElementById('bassKnob');
+        const lpSlider = document.getElementById('lowpassKnob');
+        const compSlider = document.getElementById('compKnob');
+        const cowVolSlider = document.getElementById('cowbellVol');
+        const pitchSlider = document.getElementById('pitchShift');
+        
+        const distVal = document.getElementById('distVal');
+        const bassVal = document.getElementById('bassVal');
+        const lpVal = document.getElementById('lpVal');
+        const compVal = document.getElementById('compVal');
+        const cowVolVal = document.getElementById('cowVolVal');
+        const pitchVal = document.getElementById('pitchVal');
+        
+        let originalBuffer = null;      // decoded audio buffer
+        let audioContext = null;
+        let detectedBPM = 128;           // default
+        
+        // update display values
+        distSlider.oninput = () => distVal.innerText = distSlider.value;
+        bassSlider.oninput = () => bassVal.innerText = bassSlider.value;
+        lpSlider.oninput = () => lpVal.innerText = lpSlider.value;
+        compSlider.oninput = () => compVal.innerText = compSlider.value;
+        cowVolSlider.oninput = () => cowVolVal.innerText = parseFloat(cowVolSlider.value).toFixed(2);
+        pitchSlider.oninput = () => pitchVal.innerText = pitchSlider.value;
+        
+        function getAudioCtx() {
+            if(!audioContext) audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            if(audioContext.state === 'suspended') audioContext.resume();
+            return audioContext;
         }
-    });
-}
+        
+        // simple BPM detection (autocorrelation on first ~8 seconds)
+        async function detectBPM(buffer) {
+            const ctx = getAudioCtx();
+            const channelData = buffer.getChannelData(0); // mono
+            const sampleRate = buffer.sampleRate;
+            const len = Math.min(channelData.length, sampleRate * 10); // 10 sec
+            const data = channelData.slice(0, len);
+            // autocorrelation
+            const minBPM = 70;
+            const maxBPM = 160;
+            const minLag = Math.floor((60 / maxBPM) * sampleRate);
+            const maxLag = Math.floor((60 / minBPM) * sampleRate);
+            let bestLag = minLag;
+            let bestCorr = -1;
+            for(let lag = minLag; lag <= maxLag; lag++) {
+                let corr = 0;
+                for(let i = 0; i < len - lag; i++) {
+                    corr += data[i] * data[i+lag];
+                }
+                if(corr > bestCorr) {
+                    bestCorr = corr;
+                    bestLag = lag;
+                }
+            }
+            let bpm = (60 * sampleRate) / bestLag;
+            bpm = Math.min(maxBPM, Math.max(minBPM, Math.round(bpm)));
+            return bpm;
+        }
+        
+        // load file
+        function loadAudio(file) {
+            if(!file) return;
+            fileNameSpan.innerText = file.name;
+            statusDiv.innerHTML = `📀 loading ${file.name} ...`;
+            const reader = new FileReader();
+            reader.onload = async (e) => {
+                const arrayBuf = e.target.result;
+                try {
+                    const ctx = getAudioCtx();
+                    const decoded = await ctx.decodeAudioData(arrayBuf);
+                    originalBuffer = decoded;
+                    statusDiv.innerHTML = `✅ loaded: ${decoded.duration.toFixed(1)} sec — detecting BPM...`;
+                    // BPM detection
+                    const bpm = await detectBPM(decoded);
+                    detectedBPM = bpm;
+                    bpmSpan.innerHTML = `BPM: ${detectedBPM} 🐮`;
+                    statusDiv.innerHTML = `✅ ready | BPM ${detectedBPM} | adjust sliders → phonkify`;
+                    playOriginalBtn.disabled = false;
+                } catch(err) {
+                    statusDiv.innerHTML = `❌ decode error: ${err.message}`;
+                    originalBuffer = null;
+                }
+            };
+            reader.onerror = () => statusDiv.innerHTML = "❌ file read error";
+            reader.readAsArrayBuffer(file);
+        }
+        
+        function playOriginal() {
+            if(!originalBuffer) { statusDiv.innerHTML = "⚠️ no audio loaded"; return; }
+            const ctx = getAudioCtx();
+            const src = ctx.createBufferSource();
+            src.buffer = originalBuffer;
+            src.connect(ctx.destination);
+            src.start();
+            statusDiv.innerHTML = "🔊 playing original (clean)";
+        }
+        
+        // generate cowbell buffer (mono, 16-bit like)
+        function generateCowbellBuffer(ctx, durationSeconds, bpm, volume) {
+            const sampleRate = ctx.sampleRate;
+            const totalSamples = Math.floor(sampleRate * durationSeconds);
+            const buffer = ctx.createBuffer(1, totalSamples, sampleRate);
+            const data = buffer.getChannelData(0);
+            // cowbell pattern: every 1/4 note + some offbeats (simple phonk style)
+            const beatDur = 60 / bpm;      // seconds per quarter
+            const pattern = [1, 0.5, 0, 0.75, 0, 0.5, 0, 0.75]; // 8th note pattern
+            // generate metallic tone: sine with high freq + noise envelope
+            for(let i = 0; i < totalSamples; i++) {
+                let t = i / sampleRate;
+                let beatPos = (t % beatDur) / beatDur; // 0..1 within beat
+                let barPos = (t % (beatDur * 4)) / beatDur; // quarter index
+                let patternIdx = Math.floor(barPos) % pattern.length;
+                let shouldHit = (pattern[patternIdx] > 0.2 && Math.abs(beatPos - pattern[patternIdx]) < 0.05);
+                if(shouldHit) {
+                    let env = Math.exp(-t * 25) * 0.8;
+                    let freq = 880 + Math.sin(t * 3000) * 120; // metallic
+                    let osc = Math.sin(2 * Math.PI * freq * t) * 0.7;
+                    let noise = (Math.random() * 2 - 1) * 0.3;
+                    let val = (osc + noise) * env * volume;
+                    data[i] = Math.min(0.95, Math.max(-0.95, val));
+                } else {
+                    data[i] = 0;
+                }
+            }
+            return buffer;
+        }
+        
+        // pitch shift using resample + stretch (simple linear interpolation to keep duration)
+        function pitchShiftBuffer(sourceBuffer, semitones) {
+            if(semitones === 0) return sourceBuffer;
+            const rate = Math.pow(2, semitones / 12);
+            const ctx = getAudioCtx();
+            const sampleRate = sourceBuffer.sampleRate;
+            const channels = sourceBuffer.numberOfChannels;
+            const origLen = sourceBuffer.length;
+            const newLen = Math.floor(origLen / rate);
+            const offline = new OfflineAudioContext(channels, newLen, sampleRate);
+            const src = offline.createBufferSource();
+            src.buffer = sourceBuffer;
+            src.playbackRate.value = rate;
+            src.connect(offline.destination);
+            src.start();
+            return offline.startRendering().then(shiftedBuffer => {
+                // now resample back to original length (linear interpolation)
+                const finalBuffer = ctx.createBuffer(channels, origLen, sampleRate);
+                for(let ch = 0; ch < channels; ch++) {
+                    const srcData = shiftedBuffer.getChannelData(ch);
+                    const dstData = finalBuffer.getChannelData(ch);
+                    const ratio = (srcData.length - 1) / (origLen - 1);
+                    for(let i = 0; i < origLen; i++) {
+                        let srcIndex = i * ratio;
+                        let low = Math.floor(srcIndex);
+                        let high = Math.min(low+1, srcData.length-1);
+                        let frac = srcIndex - low;
+                        dstData[i] = srcData[low] * (1-frac) + srcData[high] * frac;
+                    }
+                }
+                return finalBuffer;
+            });
+        }
+        
+        // main processing: apply FX + cowbell + pitch shift
+        async function phonkifyAndExport() {
+            if(!originalBuffer) {
+                statusDiv.innerHTML = "❌ upload a song first";
+                return;
+            }
+            processBtn.disabled = true;
+            playOriginalBtn.disabled = true;
+            statusDiv.innerHTML = "🌀 PHONKIFYING... applying distortion, bass, cowbell & pitch shift...";
+            
+            try {
+                const ctx = getAudioCtx();
+                const sampleRate = originalBuffer.sampleRate;
+                const duration = originalBuffer.duration;
+                const channels = originalBuffer.numberOfChannels;
+                
+                // 1) create offline context for FX chain
+                const offlineFx = new OfflineAudioContext(channels, sampleRate * duration, sampleRate);
+                const source = offlineFx.createBufferSource();
+                source.buffer = originalBuffer;
+                
+                // FX nodes
+                const bassBoost = offlineFx.createBiquadFilter();
+                bassBoost.type = "lowshelf";
+                bassBoost.frequency.value = 150;
+                bassBoost.gain.value = parseFloat(bassSlider.value);
+                
+                // distortion curve
+                const distortion = offlineFx.createWaveShaper();
+                const distAmount = parseFloat(distSlider.value);
+                const makeCurve = (amt) => {
+                    const k = amt / 40;
+                    const n = 44100;
+                    const curve = new Float32Array(n);
+                    for(let i=0;i<n;i++) {
+                        const x = (i*2)/n -1;
+                        curve[i] = Math.tanh(k*x) / Math.tanh(k);
+                    }
+                    return curve;
+                };
+                distortion.curve = makeCurve(distAmount);
+                distortion.oversample = '4x';
+                
+                const lowpass = offlineFx.createBiquadFilter();
+                lowpass.type = "lowpass";
+                lowpass.frequency.value = parseFloat(lpSlider.value);
+                lowpass.Q.value = 0.8;
+                
+                const compressor = offlineFx.createDynamicsCompressor();
+                const ratio = parseFloat(compSlider.value);
+                compressor.ratio.value = ratio;
+                compressor.threshold.value = -18;
+                compressor.knee.value = 6;
+                compressor.attack.value = 0.003;
+                compressor.release.value = 0.25;
+                
+                // connect chain
+                source.connect(bassBoost);
+                bassBoost.connect(distortion);
+                distortion.connect(lowpass);
+                lowpass.connect(compressor);
+                compressor.connect(offlineFx.destination);
+                source.start();
+                
+                const fxBuffer = await offlineFx.startRendering();
+                
+                // 2) apply pitch shift if needed
+                let pitchedBuffer = fxBuffer;
+                const semitones = parseFloat(pitchSlider.value);
+                if(semitones !== 0) {
+                    statusDiv.innerHTML = "🎛️ applying pitch shift...";
+                    pitchedBuffer = await pitchShiftBuffer(fxBuffer, semitones);
+                }
+                
+                // 3) generate cowbell and mix
+                const cowVol = parseFloat(cowVolSlider.value);
+                let finalBuffer = pitchedBuffer;
+                if(cowVol > 0) {
+                    const cowbellMono = generateCowbellBuffer(ctx, duration, detectedBPM, cowVol);
+                    // mix cowbell to all channels
+                    const mixed = ctx.createBuffer(pitchedBuffer.numberOfChannels, pitchedBuffer.length, pitchedBuffer.sampleRate);
+                    for(let ch=0; ch<pitchedBuffer.numberOfChannels; ch++) {
+                        const srcCh = pitchedBuffer.getChannelData(ch);
+                        const dstCh = mixed.getChannelData(ch);
+                        const cowData = cowbellMono.getChannelData(0);
+                        for(let i=0; i<srcCh.length; i++) {
+                            let mixVal = srcCh[i] + cowData[i];
+                            dstCh[i] = Math.min(0.99, Math.max(-0.99, mixVal));
+                        }
+                    }
+                    finalBuffer = mixed;
+                }
+                
+                // 4) export as MP3 using lamejs
+                statusDiv.innerHTML = "📀 encoding MP3...";
+                const wavBuffer = await bufferToWavBlob(finalBuffer);
+                const mp3Blob = await encodeWavToMp3(wavBuffer);
+                const url = URL.createObjectURL(mp3Blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `tizian_phonk_${Date.now()}.mp3`;
+                a.click();
+                URL.revokeObjectURL(url);
+                statusDiv.innerHTML = `✅ PHONKIFIED! MP3 downloaded. (BPM ${detectedBPM} · distortion ${distSlider.value})`;
+                
+            } catch(err) {
+                console.error(err);
+                statusDiv.innerHTML = `❌ processing error: ${err.message}`;
+            } finally {
+                processBtn.disabled = false;
+                if(originalBuffer) playOriginalBtn.disabled = false;
+            }
+        }
+        
+        // helper: convert AudioBuffer to WAV blob
+        function bufferToWavBlob(buffer) {
+            return new Promise((resolve) => {
+                const numChannels = buffer.numberOfChannels;
+                const sampleRate = buffer.sampleRate;
+                const format = 1;
+                const bitDepth = 16;
+                let samples = buffer.length;
+                let dataLength = samples * numChannels * (bitDepth/8);
+                const bufferBytes = new ArrayBuffer(44 + dataLength);
+                const view = new DataView(bufferBytes);
+                writeString(view, 0, 'RIFF');
+                view.setUint32(4, 36 + dataLength, true);
+                writeString(view, 8, 'WAVE');
+                writeString(view, 12, 'fmt ');
+                view.setUint32(16, 16, true);
+                view.setUint16(20, format, true);
+                view.setUint16(22, numChannels, true);
+                view.setUint32(24, sampleRate, true);
+                view.setUint32(28, sampleRate * numChannels * (bitDepth/8), true);
+                view.setUint16(32, numChannels * (bitDepth/8), true);
+                view.setUint16(34, bitDepth, true);
+                writeString(view, 36, 'data');
+                view.setUint32(40, dataLength, true);
+                
+                let offset = 44;
+                for(let i=0; i<samples; i++) {
+                    for(let ch=0; ch<numChannels; ch++) {
+                        let sample = buffer.getChannelData(ch)[i];
+                        let intSample = Math.max(-1, Math.min(1, sample)) * 0x7FFF;
+                        view.setInt16(offset, intSample, true);
+                        offset += 2;
+                    }
+                }
+                resolve(new Blob([bufferBytes], {type: 'audio/wav'}));
+            });
+        }
+        
+        function writeString(view, offset, str) {
+            for(let i=0; i<str.length; i++) view.setUint8(offset+i, str.charCodeAt(i));
+        }
+        
+        function encodeWavToMp3(wavBlob) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const wavData = new Int8Array(e.target.result);
+                    const sampleRate = 44100; // we used buffer's sampleRate, but lame expects known: we extract from wav
+                    // quick parse sampleRate from wav header (offset 24)
+                    const dataView = new DataView(wavData.buffer);
+                    const sampleRateWav = dataView.getUint32(24, true);
+                    const numChannels = dataView.getUint16(22, true);
+                    const bitsPerSample = dataView.getUint16(34, true);
+                    const samples = (wavData.length - 44) / (numChannels * (bitsPerSample/8));
+                    const left = new Int16Array(samples);
+                    const right = numChannels === 2 ? new Int16Array(samples) : left;
+                    let idx = 44;
+                    for(let i=0; i<samples; i++) {
+                        left[i] = dataView.getInt16(idx, true);
+                        idx += 2;
+                        if(numChannels === 2) right[i] = dataView.getInt16(idx, true);
+                        idx += 2;
+                    }
+                    const mp3encoder = new lamejs.Mp3Encoder(numChannels, sampleRateWav, 192);
+                    const mp3Data = [];
+                    const sampleBlockSize = 1152;
+                    for(let i=0; i<samples; i+=sampleBlockSize) {
+                        const leftChunk = left.subarray(i, i+sampleBlockSize);
+                        const rightChunk = (numChannels === 2) ? right.subarray(i, i+sampleBlockSize) : leftChunk;
+                        const mp3buf = mp3encoder.encodeBuffer(leftChunk, rightChunk);
+                        if(mp3buf.length > 0) mp3Data.push(mp3buf);
+                    }
+                    const end = mp3encoder.flush();
+                    if(end.length > 0) mp3Data.push(end);
+                    const mp3Blob = new Blob(mp3Data, {type: 'audio/mp3'});
+                    resolve(mp3Blob);
+                };
+                reader.onerror = reject;
+                reader.readAsArrayBuffer(wavBlob);
+            });
+        }
+        
+        // UI events
+        uploadZone.addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', (e) => { if(e.target.files.length) loadAudio(e.target.files[0]); });
+        uploadZone.addEventListener('dragover', (e) => { e.preventDefault(); uploadZone.style.borderColor = '#f57c2e'; });
+        uploadZone.addEventListener('dragleave', () => uploadZone.style.borderColor = '#f57c2e80');
+        uploadZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadZone.style.borderColor = '#f57c2e80';
+            if(e.dataTransfer.files.length) loadAudio(e.dataTransfer.files[0]);
+        });
+        playOriginalBtn.addEventListener('click', playOriginal);
+        processBtn.addEventListener('click', phonkifyAndExport);
+        
+        playOriginalBtn.disabled = true;
+        bpmSpan.innerHTML = "BPM: —";
+    })();
 </script>
-
 </body>
 </html>
